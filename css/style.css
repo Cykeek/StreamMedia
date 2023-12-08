@@ -4,6 +4,12 @@
     font-weight: 700;
 }
 
+@font-face {
+    font-family: 'Gilroy-Regular';
+    src: url('font/Gilroy-Regular.ttf');
+    font-weight: 400;
+}
+
 *,*::after,*::before{
     padding: 0;
     margin: 0;
@@ -25,6 +31,8 @@ body{
 
 a{
     font-family: 'Gilroy-Bold';
+    text-decoration: none;
+    color: #7BA8EB;
 }
 
 img{
@@ -120,12 +128,12 @@ nav{
     grid-template-rows: 1fr;
 }
 
-.content,.bannerimg{
+.content,.bannerimg, .signupcontent{
     grid-row: 1;
     grid-column: 1;
 }
 
-.wrapper > .content{
+.content{
     z-index: 200;
     font-size: clamp(3rem,10vw,7rem);
     padding-inline: 4rem;
@@ -181,24 +189,133 @@ nav{
     font-size: 10rem;
 }
 
+.container{
+    max-width: 80%;
+    margin-inline: auto;
+}
+
+.signup{
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    height: 100%;
+    align-items: center;
+    padding-top: 5rem;
+}
+
+.signup::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    mix-blend-mode: overlay;
+    background: url('../images/borat-subsequent-moviefilm-Borat_Subsequent_Moviefilm_00595_V2R_rgb.webp') no-repeat;
+    background-position: center 25%;
+    background-size: cover;
+}
+
+.signupcontent{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.signupcontent::after{
+    content: '';
+    height: 65%;
+    width: 3px;
+    background: aliceblue;
+    border-radius: 2rem;
+    mix-blend-mode: overlay;
+    backdrop-filter: blur(2px);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.formgroup{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-block: 1rem;
+}
+
+.formgroup > div{
+    display: flex;
+    flex-direction: column;
+}
+
+.formgroup label{
+    font-family: 'Gilroy-Bold';
+    letter-spacing: 1px;
+    opacity: 0.8;
+    line-height: 2;
+}
+
+.formgroup input{
+    background:#13132063;
+    outline: 0;
+    color: aliceblue;
+    border: 0;
+    padding: 1rem 10px;
+    font-size: 1rem;
+    border-radius: 10px;
+    backdrop-filter: blur(1px);
+}
+
+input::placeholder{
+    color: rgba(240, 248, 255, 0.308);    
+}
+
+.spc{
+    font-size: clamp(3rem,10vw,5rem);
+} 
+
+.formgroup > .tnc{
+    flex-direction: row;
+    align-self: center;
+    gap: 10px;
+}
+
+.tnc > p{
+    text-align: center;
+    font-family: 'Gilroy-Regular';
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    color: rgba(240, 248, 255, 0.432);
+}
+
+.signupbtn{
+    align-self: center;
+}
+
+.loginredirect{
+    text-align: center;
+    font-family: 'Gilroy-Regular';
+    letter-spacing: 1px;
+    color: rgba(240, 248, 255, 0.678);
+}
+
 footer{
     background: #1B1D20;
     text-align: center;
-    padding-block: 3rem;
+    padding-block: 1.5rem;
+    margin-top: auto;
 }
 
 footer > .logo{
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 footer > .tncpp{
     color: aliceblue;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .tncpp > a{
     color: #7BA8EB;
     text-decoration: none;
     letter-spacing: 1px;
-    font-size: 1.2rem;
+    font-size: 0.6rem;
 }
